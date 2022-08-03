@@ -17,16 +17,18 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body class="layout-2">
+<body class="layout-3">
   <div id="app">
 {% if body == false %}
 {% block content_2 %}{% endblock %}
 {% else %}
-    <div class="main-wrapper">
+    <div class="main-wrapper container">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <a href="index.html" class="navbar-brand sidebar-gone-hide">Stisla</a>
-        <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
+        <div class="navbar-nav">
+          <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
+        </div>
         <div class="nav-collapse">
           <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
             <i class="fas fa-ellipsis-v"></i>
@@ -252,13 +254,42 @@
           </li>
         </ul>
       </nav>
-      <div class="main-sidebar">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand sidebar-gone-show"><a href="index.html">Stisla</a></div>
-{% set layout = 'layout-2' %}
-{% include 'layouts/menu.html' %}
-        </aside>
-      </div>
+
+      <nav class="navbar navbar-secondary navbar-expand-lg">
+        <div class="container">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="index-0.html" class="nav-link">General Dashboard</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Ecommerce Dashboard</a></li>
+              </ul>
+            </li>
+            <li class="nav-item active">
+              <a href="#" class="nav-link"><i class="far fa-heart"></i><span>Top Navigation</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" data-toggle="dropdown" class="nav-link has-dropdown"><i class="far fa-clone"></i><span>Multiple Dropdown</span></a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Not Dropdown Link</a></li>
+                <li class="nav-item dropdown"><a href="#" class="nav-link has-dropdown">Hover Me</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                    <li class="nav-item dropdown"><a href="#" class="nav-link has-dropdown">Link 2</a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Link 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
       <!-- Main Content -->
       <div class="main-content">
@@ -277,7 +308,7 @@
   </div>
 
   <!-- General JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
@@ -285,7 +316,6 @@
   <script src="../assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/sticky-kit/dist/sticky-kit.min.js"></script>
 {% block plugins_js %}{% endblock %}
 
   <!-- Page Specific JS File -->
