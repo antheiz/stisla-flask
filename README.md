@@ -48,7 +48,7 @@ $ git clone https://github.com/antheiz/stisla-flask
 
 - Run the Server 
  ```
- $python run.py
+ $ python run.py
  ```
 - Open `127.0.0.1:5000` in your Browser
 
